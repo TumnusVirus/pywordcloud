@@ -99,4 +99,4 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 	f.write(message)
 	f.close
 	f.flush()
-	print "Successfully generated word cloud in '" + outfile + "' file."
+	print ("Successfully generated word cloud in '" + outfile + "' file.")
