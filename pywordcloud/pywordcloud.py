@@ -14,7 +14,7 @@ def getKeywords(articletext, case, freq, removepunct):
 				word_dict[word] = 1
 			if word in word_dict:
 				word_dict[word] += 1
-	top_words =  sorted(word_dict.items(),key=lambda(k,v):(v,k),reverse=True)[0:freq]
+	top_words =  sorted(word_dict.items(),key=lambda k,v:(v,k),reverse=True)[0:freq]
 	top = []
 	for w in top_words:
 		top.append(w)
@@ -25,7 +25,7 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 	, fontfamily = 'calibri', removepunct = False, colorlist = ['#607ec5','#002a8b','#86a0dc','#4c6db9'] ):
 	
 	if not outfile.endswith(".html"):
-		print "Please Enter Output File with extension .html"
+		print ("Please Enter Output File with extension .html")
 		sys.exit(0)
 
 	case = uppercase
@@ -77,7 +77,7 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 			K = float(freqTag - minFreq)/(maxFreq - minFreq)
 			size = fontMin + (C*float(K*frange/C))
 		except:
-			print "!!! Please input a text with more number of words !!!"
+			print ("!!! Please input a text with more number of words !!!")
 			sys.exit(0)
 
 		css += '#tag'+str(index)+'{font-size: '+ str(size) +'em;color: ' + colors[int(k%colsize)]+'}\n'
@@ -85,7 +85,7 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 	 	k += 1
 	
 
-	''' Write the HTML and CSS into seperate files ''' 
+	''' Write the HTML and CSS into separate files ''' 
 
 	f = open(outfile, 'w')
 	message = """
