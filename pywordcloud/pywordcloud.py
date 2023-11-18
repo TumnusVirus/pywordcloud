@@ -14,7 +14,7 @@ def getKeywords(articletext, case, freq, removepunct):
 				word_dict[word] = 1
 			if word in word_dict:
 				word_dict[word] += 1
-	top_words =  sorted(word_dict.items(),key=lambda k,v:(v,k),reverse=True)[0:freq]
+	top_words =  sorted(word_dict.items(),key=lambda item: (v,k),reverse=True)[0:freq]
 	top = []
 	for w in top_words:
 		top.append(w)
