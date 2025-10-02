@@ -14,7 +14,7 @@ def getKeywords(articletext, case, freq, removepunct):
 				word_dict[word] = 1
 			if word in word_dict:
 				word_dict[word] += 1
-	top_words =  sorted(word_dict.items(),key=lambda item: (v,k),reverse=True)[0:freq]
+	top_words =  sorted(word_dict.items(),key=lambda item: (item[1],item[0]),reverse=True)[0:freq]
 	top = []
 	for w in top_words:
 		top.append(w)
@@ -81,11 +81,10 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 			sys.exit(0)
 
 		css += '#tag'+str(index)+'{font-size: '+ str(size) +'em;color: ' + colors[int(k%colsize)]+'}\n'
-	 	css += '#tag'+str(index)+':hover{color:' + hovercolor + '}\n'
-	 	k += 1
-	
+		css += '#tag'+str(index)+':hover{color:' + hovercolor + '}\n'
+		k += 1
 
-	''' Write the HTML and CSS into separate files ''' 
+	''' Write the HTML and CSS into separate files '''
 
 	f = open(outfile, 'w')
 	message = """
