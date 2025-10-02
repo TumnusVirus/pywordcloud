@@ -12,7 +12,7 @@ def getKeywords(articletext, case, freq, removepunct):
 		if word not in stopwords.stopwords and word.isalnum() and not word.isdigit() and len(word) > 2:
 			if word not in word_dict:
 				word_dict[word] = 1
-			if word in word_dict:
+			else:
 				word_dict[word] += 1
 	top_words =  sorted(word_dict.items(),key=lambda item: (item[1],item[0]),reverse=True)[0:freq]
 	top = []
