@@ -1,10 +1,10 @@
-import random, re, string, stopwords, sys
+import random, string, stopwords, sys
 
 try:
 	from.import stopwords
 except Exception:
 	import stopwords
-	
+
 exclude = list(string.punctuation)
 
 def getKeywords(articletext, case, freq, removepunct):
