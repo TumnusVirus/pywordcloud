@@ -35,6 +35,9 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 
 	freq = frequency
 	a = getKeywords(article, case, freq, removepunct)
+	# Guard: if no keywords were found, avoid downstream errors (min/max on empty list)
+	if not a:
+		raise ValueError("No keywords found — please provide text with valid words (longer than 2 chars and not stopwords).")
 	random.shuffle(a)
 	b = [x[1] for x in a]
 	minFreq = min(b)
