@@ -1,1 +1,2 @@
-from pywordcloud import *
+from pywordcloud import create, getKeywords
+__all__ = ["create", "getKeywords"]
